@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
 import Appointment from './Appointment'
 
+import { appointmentTimeOfDay } from '../util/timeUtil'
+
 // NOTE: this component would break if appointments were not passed at all
 // should use prop types
-
-const appointmentTimeOfDay = startsAt => {
-  const [h, m] = new Date(startsAt).toTimeString().split(':')
-  return `${h}:${m}`
-}
 
 const AppointmentssDayView = ({ appointments }) => {
   const [selectedAppointment, setSelectedAppointment] = useState(0) 
