@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import Appointment from './Appointment'
 
+import Appointment from './Appointment'
+import CustomerForm from './CustomerForm'
 import { appointmentTimeOfDay } from '../util/timeUtil'
 
 // NOTE: this component would break if appointments were not passed at all
@@ -10,6 +11,7 @@ const AppointmentssDayView = ({ appointments }) => {
   const [selectedAppointment, setSelectedAppointment] = useState(0) 
 
   return (
+    <>
     <div id="appointments-day-view">
       <ol>
         {appointments.map((a,i) => (
@@ -29,6 +31,8 @@ const AppointmentssDayView = ({ appointments }) => {
         : <p data-test="no-appointments">No appointments</p>
       }
     </div>
+    <CustomerForm />
+    </>
   )
 }
 
